@@ -1,1 +1,28 @@
-h1 header
+header.desktop
+  .wrap
+    nav
+      .logo-wrap
+        a.logo(href='/')
+          img(src='', alt='')
+      .menu
+        ul.menu-list
+          li.menu-item
+            a(href='#service') Services
+          li.menu-item
+            a(href='#about') About us
+          li.menu-item
+            a(href='#contact') Contact
+header#js-menu.mobile
+  .wrap
+    nav
+      ul.menu-list
+        li.menu-item
+          a(href='#service') Services
+        li.menu-item
+          a(href='#about') About us
+        li.menu-item
+          a(href='#contact') Contact
+      a.logo(href='#')
+        img(src='', alt='')
+      a#js-burger.burger(href='#')
+        span

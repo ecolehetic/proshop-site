@@ -8,14 +8,14 @@ var gulp        = require('gulp'),
     livereload  = require('gulp-livereload'), // Livereload plugin needed: https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei
     tinylr      = require('tiny-lr'),
     express     = require('express'),
-    connect = require('gulp-connect');
+    connect     = require('gulp-connect');
     app         = express(),
     marked      = require('marked'), // For :markdown filter in jade
     path        = require('path'),
     server      = tinylr();
 
 gulp.task('css', function() {
-  return gulp.src('src/assets/stylesheets/*.scss')
+  return gulp.src('src/assets/stylesheets/main.scss')
     .pipe(
       sass( {
         includePaths: ['src/assets/stylesheets'],
