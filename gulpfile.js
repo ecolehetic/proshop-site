@@ -8,6 +8,7 @@ var gulp        = require('gulp'),
     livereload  = require('gulp-livereload'), // Livereload plugin needed: https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei
     tinylr      = require('tiny-lr'),
     express     = require('express'),
+    connect = require('gulp-connect');
     app         = express(),
     marked      = require('marked'), // For :markdown filter in jade
     path        = require('path'),
@@ -15,14 +16,14 @@ var gulp        = require('gulp'),
 
 gulp.task('css', function() {
   return gulp.src('src/assets/stylesheets/*.scss')
-    .pipe( 
-      sass( { 
+    .pipe(
+      sass( {
         includePaths: ['src/assets/stylesheets'],
         errLogToConsole: true
       } ) )
     .pipe( csso() )
     .pipe( gulp.dest('dist/assets/stylesheets/') )
-    .pipe( livereload( server ));
+    .pipe( connect.reload());
 });
 
 gulp.task('js', function() {
@@ -30,7 +31,7 @@ gulp.task('js', function() {
     .pipe( uglify() )
     .pipe( concat('all.min.js'))
     .pipe( gulp.dest('dist/assets/scripts/'))
-    .pipe( livereload( server ));
+    .pipe( connect.reload());
 });
 
 gulp.task('templates', function() {
@@ -39,7 +40,7 @@ gulp.task('templates', function() {
       pretty: true
     }))
     .pipe(gulp.dest('dist/'))
-    .pipe( livereload( server ));
+    .pipe( connect.reload());
 });
 
 gulp.task('express', function() {
@@ -59,9 +60,16 @@ gulp.task('watch', function () {
     gulp.watch('src/assets/js/*.js',['js']);
 
     gulp.watch('src/*.jade',['templates']);
-    
+
+  });
+});
+
+gulp.task('connect', function() {
+  connect.server({
+    root: 'dist',
+    livereload: true
   });
 });
 
 // Default Task
-gulp.task('default', ['js','css','templates','express','watch']);
+gulp.task('default', ['connect', 'js','css','templates','express', 'watch']);
