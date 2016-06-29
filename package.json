@@ -17,16 +17,17 @@
   },
   "homepage": "https://github.com/ecolehetic/proshop-site#readme",
   "devDependencies": {
-  	"gulp-load-plugins": "latest",
-    "gulp-concat": "latest",
-    "gulp-util": "latest",
+    "express": "latest",
     "gulp": "latest",
+    "gulp-concat": "latest",
+    "gulp-connect": "^4.1.0",
     "gulp-csso": "latest",
-    "gulp-sass": "latest",
     "gulp-jade": "latest",
     "gulp-livereload": "latest",
-    "tiny-lr": "latest",
-    "express": "latest",
-    "marked": "latest"
+    "gulp-load-plugins": "latest",
+    "gulp-sass": "latest",
+    "gulp-util": "latest",
+    "marked": "latest",
+    "tiny-lr": "latest"
   }
 }
