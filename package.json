@@ -1,0 +1,32 @@
+{
+  "name": "proshop_site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ecolehetic/proshop-site.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ecolehetic/proshop-site/issues"
+  },
+  "homepage": "https://github.com/ecolehetic/proshop-site#readme",
+  "devDependencies": {
+  	"gulp-load-plugins": "latest",
+    "gulp-concat": "latest",
+    "gulp-util": "latest",
+    "gulp": "latest",
+    "gulp-csso": "latest",
+    "gulp-sass": "latest",
+    "gulp-jade": "latest",
+    "gulp-livereload": "latest",
+    "tiny-lr": "latest",
+    "express": "latest",
+    "marked": "latest"
+  }
+}
