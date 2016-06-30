@@ -22,16 +22,17 @@
     "gulp-concat": "latest",
     "gulp-connect": "^4.1.0",
     "gulp-csso": "latest",
+    "gulp-if": "^2.0.0",
     "gulp-jade": "latest",
     "gulp-livereload": "latest",
     "gulp-load-plugins": "latest",
+    "gulp-rename": "^1.2.2",
     "gulp-sass": "latest",
-    "gulp-util": "latest",
-    "marked": "latest",
-    "tiny-lr": "latest",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-typescript": "^2.12.0",
-    "gulp-if": "^2.0.0",
-    "gulp-rename": "^1.2.2"
+    "gulp-uglify": "^1.5.4",
+    "gulp-util": "latest",
+    "marked": "latest",
+    "tiny-lr": "latest"
   }
 }
