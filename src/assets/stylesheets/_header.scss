@@ -1,3 +1,184 @@
-body {
-  background-color: red;
+header {
+	font-size: 0;
+	width: 100%;
+	z-index: 100;
+  position: fixed;
+	&.fixed.desktop {
+		.wrap {
+			z-index: 9999;
+			position: fixed;
+			top: 0;
+			right: 0;
+			left: 0;
+			&:after {
+				content: '';
+		    display: inline-block;
+		    width: 100%;
+		    height: 4px;
+		    background: #fff;
+		    bottom: -4px;
+		    position: relative;
+			}
+		}
+		nav {
+			padding-bottom: 11px;
+			z-index: 999;
+			background: white;
+		}
+	}
+	.wrap {
+		background-color: #ffffff;
+	}
+	&.mobile {
+		position: fixed;
+		z-index: 100;
+		top: 0;
+		width: 100%;
+		margin-top: -180px;
+		@include transition(transform .2s ease-in-out);
+		&.open {
+			@include translate(0, 174px);
+			.burger span:before {
+				top: 0;
+				@include rotate(45deg);
+			}
+			.burger span {
+				background: none;
+			}
+			.burger span:after {
+				top: 0;
+				@include rotate(-45deg);
+			}
+		}
+		nav {
+			position: relative;
+			padding: 0 10px 40px;
+		}
+		.logo {
+			font-size: 14px;
+			position: absolute;
+			bottom: 5px;
+			img {
+				width: 100px;
+			}
+		}
+		.menu-list {
+			font-size: 14px;
+		}
+		.menu-item {
+			text-transform: uppercase;
+			text-transform: uppercase;
+			padding: 10px 40px 10px 0;
+		}
+		.menu-list,
+		.language-chooser {
+			a {
+				font-size: 18px;
+			}
+		}
+		.language-chooser {
+			padding: 15px 0;
+			&:before {
+				content: '';
+				display: inherit;
+				width: 100px;
+				height: 1px;
+				background: #4D4D4D;
+				margin: 0 auto;
+				top: -15px;
+				position: relative;
+			}
+			li {
+				display: inline-block;
+				width: 50%;
+				text-align: center;
+				&:nth-child(1) {
+					text-align: right;
+					padding-right: 15px;
+				}
+				&:nth-child(2) {
+					text-align: left;
+					padding-left: 15px;
+				}
+			}
+		}
+	}
+	&.desktop {
+		nav {
+			max-width: 100%;
+			margin-left: auto;
+			margin-right: auto;
+			width: 950px;
+			padding-top: 25px;
+			padding-bottom: 25px;
+		}
+		.logo-wrap {
+			width: 30%;
+			vertical-align: middle;
+			display: inline-block;
+		}
+		.logo {
+			display: inline-block;
+			img {
+				width: 150px;
+			}
+		}
+		.menu {
+			display: inline-block;
+			width: 70%;
+			text-align: right;
+		}
+		.menu-list li {}
+		.menu-item {
+			text-transform: uppercase;
+			a {
+				padding: 12px 25px;
+			}
+		}
+		.menu-list,
+		.language-chooser {
+			vertical-align: middle;
+			font-size: 14px;
+			display: inline-block;
+		}
+		.language-chooser {
+			margin-left: 30px;
+			text-transform: capitalize;
+			li {
+				font-size: 14px;
+				a {
+					padding: 12px 8px;
+				}
+			}
+		}
+		.menu-item,
+		.language-chooser li {
+			display: inline-block;
+			float: left;
+		}
+	}
+	.menu-list,
+	.language-chooser {
+		a {
+			color: #4d4d4d;
+		}
+		li.active a {
+			color: $main-color;
+		}
+	}
+}
+.no-touch header {
+.menu-list a {
+	@include transition(color .2s cubic-bezier(0.73, 0.33, 0, 0.93));
+	&:hover {
+		color: $main-color;
+	}
+}
+}
+.touch header {}
+@media screen and (max-width: 1024px) {
+header.desktop nav {
+	padding-right: 20px;
+	padding-left: 20px;
+}
 }
