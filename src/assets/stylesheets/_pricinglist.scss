@@ -1,0 +1,114 @@
+#pricinglist-section{
+  font-family: 'Montserrat Bold', sans-serif;
+  .pricinglist {
+    button {
+      outline: 0;
+    },
+    .content-pricinglist {
+      height: 100%;
+      width: 100%;
+      text-align: center;
+      .basic-pricing {
+        display: inline-block;
+        margin: 20px 40px 0 0;
+        .basic-pricing-main {
+          background-color: #fbfbfb;
+          width: 600px;
+          height: 300px;
+          padding-top: 20px;
+          border-bottom: 2px solid #40d0da;
+          h1.basic-package{
+            text-transform: uppercase;
+          }
+          p.basic-price {
+            font-size: 40px;
+            font-weight: bold;
+          }
+          p.offer {
+            font-weight: bold
+          }
+        };
+        .basic-pricing-feature {
+          background-color: #fbfbfb;
+          ul {
+            padding: 20px 0;
+            li{
+              padding: 10px 0;
+            }
+          }
+        };
+        .basic-pricing-buy {
+          button {
+            background-color: #40d0da;
+            width: 100%;
+            border: none;
+            text-decoration: none;
+            padding: 10px 100px;
+            span {
+              color: #fff;
+              font-weight: bold;
+              text-transform: uppercase;
+              font-size: 20px;
+            }
+          }
+        }
+      };
+      .premium-pricing {
+        display: inline-block;
+        .premium-pricing-main {
+          background-color: #fbfbfb;
+          width: 600px;
+          height: 300px;
+          padding-top: 20px;
+          border-bottom: 2px solid #40d0da;
+          h1.premium-package{
+            text-transform: uppercase;
+            background: -webkit-linear-gradient(#52d1da, #27a3ce); 
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+          p.premium-price{
+            font-size: 40px;
+            font-weight: bold;
+            background: -webkit-linear-gradient(#52d1da, #27a3ce); 
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+          p.offer {
+            font-weight: bold
+          }
+        }
+        .premium-pricing-feature {
+          background-color: #fbfbfb;
+          ul {
+            padding: 20px 0;
+            li{
+              padding: 10px 0;
+            }
+          }
+        }
+        .premium-pricing-buy {
+          button {
+            background-color: #40d0da;
+            width: 100%;
+            border: none;
+            text-decoration: none;
+            padding: 10px 100px;
+            span {
+              color: #fff;
+              font-weight: bold;
+              text-transform: uppercase;
+              font-size: 20px;
+            }
+          }
+        }
+      }
+      .try-condition {
+        padding-top:15px;
+        width: 100%;
+        font-size: 14px;
+        color: #dbdbdb;
+      } 
+    } 
+  }
+}
