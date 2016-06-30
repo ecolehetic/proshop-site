@@ -2,10 +2,11 @@ doctype html
 html(lang="fr")
   head
     title= Proshop
+    link(rel='stylesheet', type='text/css', href='//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css')
     link(rel='stylesheet', href='assets/stylesheets/main.css')
     link(rel='icon', type='image/png', href='img/favicon.png')
     link(rel='stylesheet', type='text/css', href='https://fonts.googleapis.com/css?family=Lato')
-    link(rel='stylesheet', type='text/css', href='https://fonts.googleapis.com/css?family=Montserrat:400,700')
+    link(rel='stylesheet', type='text/css', href='https://fonts.googleapis.com/css?family=Montserrat:400,300,700')
   body  
     include ./includes/header.jade
     main
@@ -13,7 +14,13 @@ html(lang="fr")
         include ./includes/baseline.jade
       section#keyword-section
         include ./includes/keywords.jade
-      section
+      section#leftvisu-section
+        div.left
+          h3 Une solution inédite uniquement pour vous
+        div.right
+          img(src='img/cool.jpg')
+          a.btn-main(href='') EN SAVOIR PLUS
+      section#punchline-section
         include ./includes/punchline.jade
       section#tryit-section
         include ./includes/tryit.jade
@@ -21,4 +28,6 @@ html(lang="fr")
       include ./includes/footer.jade
     script(src='assets/vendor/modernizr.min.js')
     script(src='assets/vendor/vanilla.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js')
+    script(src='assets/vendor/slick.min.js')
     script(src='assets/scripts/scripts.min.js')

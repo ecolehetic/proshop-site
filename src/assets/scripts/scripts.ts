@@ -1,5 +1,5 @@
 'use strict';
-// var MobileDetect = MobileDetect || {}
+var $ = jQuery || {}
 
 class App {
 
@@ -25,10 +25,10 @@ class App {
         // var myScroll = new IScroll(wrapper, {
         //   click: true
         // });
-
+        console.log($);
         // this.events();
         this.msieversion();
-
+        this.initSLider();
         // this.paralax();
     }
 
@@ -66,6 +66,18 @@ class App {
                 this.paralax();
             })
         // }
+
+    }
+
+    initSLider() {
+      $('.fade-punchline').slick({
+        dots: true,
+        infinite: true,
+        speed: 500,
+        autoplay: true,
+        fade: true,
+        cssEase: 'linear'
+      });
 
     }
 

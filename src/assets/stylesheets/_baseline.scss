@@ -2,9 +2,12 @@
   background-image: url('../img/header.jpg');
   .global {
     position: relative;
+    font-size: 0;
     figcaption {
+
       position: absolute;
-      bottom: 0;
+    bottom: 30px;
+    left: 30px;
     }
   }
   .service-visu {
@@ -12,7 +15,11 @@
   }
   .punchline {
     color: white;
-    font-family: 'Montserrat Bold', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 25px;
+    text-transform: uppercase;
+    width: 60%;
   }
 }
 
