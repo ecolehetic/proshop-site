@@ -1,7 +1,7 @@
 #keyword-section {
   border-top: 3px solid $main-color;
   padding: 50px 0;
-  background-color: #fbfbfb;
+  background-color: rgba(245, 245, 245, 0.68);
   @media screen and (max-width: 760px) {
       ul li.keyword {
         width: 100%;
@@ -43,15 +43,54 @@ p.credit:before {
     top: -4px;
     left: -10px;
 }
-#leftvisu-section {
-  font-size: 0;
-}
 .left, .right{
   width: 50%;
   display: inline-block;
+  text-align: center;
+}
+#leftvisu-section {
+  font-size: 0;
+  padding: 0 40px;
+  .btn-main {
+    position: relative;
+    top: -25px;
+  }
+  .left {
+    padding: 0 20px;
+    vertical-align: middle;
+  }
+  .right {
+    vertical-align: middle;
+    img {
+      width: 100%;
+    }
+  }
+  h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    text-transform: uppercase;
+    margin-bottom: 60px;
+    position: relative;
+    &:after {
+      content: '';
+      width: 50px;
+      height: 3px;
+      background: $main-color;
+      display: inline-block;
+      right: calc(50% - 25px);
+      position: absolute;
+      bottom: -20px;
+    }
+  }
+  p {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+  }
 }
 #punchline-section {
-  background: #fbfbfb;
+  background: rgba(245, 245, 245, 0.68);
   padding: 20px 0;
   .fade-punchline {
     text-align: center;
@@ -67,10 +106,10 @@ p.credit:before {
         position: relative;
         top: 40px;
         left: -40px;
-        content: url('../../img/quoteUp.png')
+        // content: url('../../img/quoteUp.png')
       }
       &.slick-slide:after {
-        content: url('../../img/quoteDown.png')
+        // content: url('../../img/quoteDown.png')
       }
       .punchline {
         width: 80%;
@@ -94,7 +133,7 @@ p.credit:before {
   margin: 60px 0;
   text-align: center;
   p {
-
+    font-size: 20px;
   }
   a {
     padding: 15px 24px;
@@ -121,9 +160,12 @@ footer {
         margin-bottom: 5px;
       }
     }
-    .coco {
+    .coco {
       width: 500px;
       display: inline-block;
+      img{
+        padding-bottom: 10px;
+      }
       p.text {
         font-size: 14px;
         margin: 0;
@@ -150,6 +192,11 @@ footer {
         display: inline-block;
         background-repeat: no-repeat;
         margin-right: 5px;
+        a {
+          width: 27px;
+          height: 27px;
+          display: block;
+        }
         &.facebook {
           background-image: url('../../img/facebook.png');
         }
