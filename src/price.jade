@@ -2,6 +2,7 @@ doctype html
 html(lang="fr")
   head
     title Proshop, les prix
+    meta(charset='utf-8')
     link(rel='stylesheet', href='assets/stylesheets/main.css')
     link(rel='icon', type='image/png', href='img/favicon.png')
     link(rel='stylesheet', type='text/css', href='https://fonts.googleapis.com/css?family=Lato')
@@ -9,12 +10,14 @@ html(lang="fr")
   body  
     include ./includes/header.jade
     main
-      section#baseline-section
-        include ./includes/baseline.jade
-      section
+      section#subscribe-section
+        include ./includes/subscribe.jade
+      section#pricinglist-section
+        include ./includes/pricinglist.jade
       section
       section
     footer
+      include ./includes/footer.jade
     script(src='assets/vendor/modernizr.min.js')
     script(src='assets/vendor/vanilla.js')
     script(src='assets/scripts/scripts.min.js')
