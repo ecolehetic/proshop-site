@@ -51,7 +51,8 @@ gulp.task('ts', function() {
 		.pipe(concat('scripts.min.js')) // You can use other plugins that also support gulp-sourcemaps
 		.pipe(uglify())
 		.pipe(gulpif(argv.dev, sourcemaps.write())) // Now the sourcemaps are added to the .js file
-		.pipe(gulp.dest('dist/assets/scripts/'));
+		.pipe(gulp.dest('dist/assets/scripts/'))
+    .pipe( connect.reload());
 });
 
 gulp.task('templates', function() {
@@ -77,7 +78,7 @@ gulp.task('watch', function () {
 
     gulp.watch('src/assets/stylesheets/*.scss',['css']);
 
-    gulp.watch('src/assets/js/*.ts',['ts']);
+    gulp.watch('src/assets/scripts/*.ts',['ts']);
 
     gulp.watch('src/**/*.jade',['templates']);
 
