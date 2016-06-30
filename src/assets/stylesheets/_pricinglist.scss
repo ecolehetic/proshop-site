@@ -1,0 +1,194 @@
+#pricinglist-section{
+  font-family: 'Montserrat Bold', sans-serif;
+  margin-top: 10px;
+  .pricinglist {
+    button {
+      outline: 0;
+    },
+    .content-pricinglist {
+      height: 100%;
+      width: 100%;
+      text-align: center;
+      .basic-pricing {
+        display: inline-block;
+        margin: 0 40px 0 0;
+        .basic-pricing-main {
+          background-color: #fbfbfb;
+          width: 600px;
+          height: 300px;
+          padding-top: 20px;
+          border-bottom: 2px solid #40d0da;
+          position: relative;
+          &:after{
+            content: '';
+            background-image: url('../../img/arrow.png');
+            position: absolute;
+            bottom: -8px;
+            width: 15px;
+            height: 9px;
+            left: 50%;
+            margin-left: -7px;
+          }
+          h1.basic-package{
+            text-transform: uppercase;
+          }
+          p.basic-price {
+            font-size: 40px;
+            font-weight: bold;
+          }
+          p.offer {
+            font-weight: bold
+          }
+        };
+        .basic-pricing-feature {
+          background-color: #fbfbfb;
+              margin-top: 25px;
+          ul {
+            padding: 20px 0;
+            li{
+              color: #6d6d6d;
+              text-align: left;
+              position: relative;
+              padding: 10px 0 10px 50px;
+              &.in{
+                color: black;
+              }
+              &.premium{
+                color: black;
+              }
+              &.in:before{
+                left: 20px;
+                content: '';
+                width: 21px;
+                height: 15px;
+                position: absolute;
+                display: inline-block;
+                background-image: url('../../img/arrowblack.png');
+              }
+              &.premium:before{
+                left: 20px;
+                content: '';
+                width: 21px;
+                height: 15px;
+                position: absolute;
+                display: inline-block;
+                background-image: url('../../img/arrowblue.png');
+              }
+            }
+          }
+        };
+        .basic-pricing-buy {
+          button {
+            background-color: #40d0da;
+            width: 100%;
+            border: none;
+            text-decoration: none;
+            padding: 10px 100px;
+            span {
+              color: #fff;
+              font-weight: bold;
+              text-transform: uppercase;
+              font-size: 20px;
+            }
+          }
+        }
+      };
+      .premium-pricing {
+        display: inline-block;
+        .premium-pricing-main {
+          background-color: #fbfbfb;
+          width: 600px;
+          height: 300px;
+          padding-top: 20px;
+          border-bottom: 2px solid #40d0da;
+          position: relative;
+          &:after{
+            content: '';
+            background-image: url('../../img/arrow.png');
+            position: absolute;
+            bottom: -8px;
+            width: 15px;
+            height: 9px;
+            left: 50%;
+            margin-left: -7px;
+          }
+          h1.premium-package{
+            text-transform: uppercase;
+            background: -webkit-linear-gradient(#52d1da, #27a3ce);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+          p.premium-price{
+            font-size: 40px;
+            font-weight: bold;
+            background: -webkit-linear-gradient(#52d1da, #27a3ce);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+          p.offer {
+            font-weight: bold
+          }
+        }
+        .premium-pricing-feature {
+          background-color: #fbfbfb;
+          margin-top: 25px;
+          ul {
+            padding: 20px 0;
+            li{
+              color: #6d6d6d;
+              text-align: left;
+              padding: 10px 0 10px 50px;
+              position: relative;
+              &.in{
+                color: black;
+              }
+              &.premium{
+                color: black;
+              }
+              &.in:before{
+                left: 20px;
+                content: '';
+                width: 21px;
+                height: 15px;
+                position: absolute;
+                display: inline-block;
+                background-image: url('../../img/arrowblack.png');
+              }
+              &.premium:before{
+                color: black !important;
+                left: 20px;
+                content: '';
+                width: 21px;
+                height: 15px;
+                position: absolute;
+                display: inline-block;
+                background-image: url('../../img/arrowblue.png');
+              }
+            }
+          }
+        }
+        .premium-pricing-buy {
+          button {
+            background-color: #40d0da;
+            width: 100%;
+            border: none;
+            text-decoration: none;
+            padding: 10px 100px;
+            span {
+              color: #fff;
+              font-weight: bold;
+              text-transform: uppercase;
+              font-size: 20px;
+            }
+          }
+        }
+      }
+      .try-condition {
+        padding-top:15px;
+        width: 100%;
+        font-size: 14px;
+        color: #dbdbdb;
+      }
+    }
+  }
+}
