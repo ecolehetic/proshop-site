@@ -1,7 +1,8 @@
 doctype html
 html(lang="fr")
   head
-    title= Proshop
+    title Proshop, votre gestionnaire d'achats
+    meta(charset='utf-8')
     link(rel='stylesheet', type='text/css', href='//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css')
     link(rel='stylesheet', href='assets/stylesheets/main.css')
     link(rel='icon', type='image/png', href='img/favicon.png')
@@ -15,11 +16,7 @@ html(lang="fr")
       section#keyword-section
         include ./includes/keywords.jade
       section#leftvisu-section
-        div.left
-          h3 Une solution inédite uniquement pour vous
-        div.right
-          img(src='img/cool.jpg')
-          a.btn-main(href='') EN SAVOIR PLUS
+        include ./includes/leftvisu.jade
       section#punchline-section
         include ./includes/punchline.jade
       section#tryit-section
@@ -31,3 +28,10 @@ html(lang="fr")
     script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js')
     script(src='assets/vendor/slick.min.js')
     script(src='assets/scripts/scripts.min.js')
+    script.
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-80153043-1', 'auto');
+      ga('send', 'pageview');
