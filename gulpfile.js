@@ -8,11 +8,16 @@ var gulp        = require('gulp'),
     livereload  = require('gulp-livereload'), // Livereload plugin needed: https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei
     tinylr      = require('tiny-lr'),
     express     = require('express'),
-    connect     = require('gulp-connect');
+    connect     = require('gulp-connect'),
     app         = express(),
     marked      = require('marked'), // For :markdown filter in jade
     path        = require('path'),
-    server      = tinylr();
+    server      = tinylr(),
+    rename = require('gulp-rename'),
+    ts = require('gulp-typescript'),
+    argv = require('yargs').argv,
+    gulpif = require('gulp-if'),
+    sourcemaps = require('gulp-sourcemaps');
 
 gulp.task('css', function() {
   return gulp.src('src/assets/stylesheets/main.scss')
@@ -26,12 +31,27 @@ gulp.task('css', function() {
     .pipe( connect.reload());
 });
 
-gulp.task('js', function() {
-  return gulp.src('src/assets/scripts/*.js')
-    .pipe( uglify() )
-    .pipe( concat('all.min.js'))
-    .pipe( gulp.dest('dist/assets/scripts/'))
-    .pipe( connect.reload());
+// Concatenate & Minify JS
+gulp.task('ts', function() {
+	var tsResult = gulp.src('src/assets/scripts/*.ts')
+		.pipe(sourcemaps.init()) // This means sourcemaps will be generated
+		.pipe(ts({
+			target: 'ES5',
+			module: 'system',
+			moduleResolution: 'node',
+			sourceMap: true,
+			declaration: true,
+			emitDecoratorMetadata: true,
+			experimentalDecorators: true,
+			removeComments: false,
+			noImplicitAny: false,
+			out: 'scripts.js'
+		}));
+	return tsResult.js
+		.pipe(concat('scripts.min.js')) // You can use other plugins that also support gulp-sourcemaps
+		.pipe(uglify())
+		.pipe(gulpif(argv.dev, sourcemaps.write())) // Now the sourcemaps are added to the .js file
+		.pipe(gulp.dest('dist/assets/scripts/'));
 });
 
 gulp.task('templates', function() {
@@ -57,9 +77,9 @@ gulp.task('watch', function () {
 
     gulp.watch('src/assets/stylesheets/*.scss',['css']);
 
-    gulp.watch('src/assets/js/*.js',['js']);
+    gulp.watch('src/assets/js/*.ts',['ts']);
 
-    gulp.watch('src/*.jade',['templates']);
+    gulp.watch('src/**/*.jade',['templates']);
 
   });
 });
@@ -72,4 +92,4 @@ gulp.task('connect', function() {
 });
 
 // Default Task
-gulp.task('default', ['connect', 'js','css','templates','express', 'watch']);
+gulp.task('default', ['ts','css','templates','express', 'watch', 'connect']);

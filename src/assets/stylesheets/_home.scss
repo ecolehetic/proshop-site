@@ -1,0 +1,62 @@
+#keyword-section {
+  border-top: 3px solid $main-color;
+  padding: 50px 0;
+  background-color: #fbfbfb;
+  @media screen and (max-width: 760px) {
+      ul li.keyword {
+        width: 100%;
+      }
+  }
+  li.keyword {
+    width: 33%;
+    font-size: 18px;
+    display: inline-block;
+    padding: 0 50px;
+    text-align: center;
+    .text {
+      font-family: 'Lato', sans-serif;
+    }
+    .title {
+      text-transform: uppercase;
+      font-family: 'Montserrat', sans-serif;
+    }
+  }
+
+}
+#tryit-section {
+  margin: 60px 0;
+  text-align: center;
+  p {
+
+  }
+  a {
+    padding: 15px 24px;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    display: inline-block;
+    text-transform: uppercase;
+    background: $main-color;
+  }
+}
+footer {
+  color: #8a8a8a;
+  ul {
+    li {
+      a {
+
+      }
+    }
+  }
+  .infos {
+    background: #3f4040;
+    .block-info {
+
+    }
+  }
+  .credit {
+    background: #333333;
+    p {
+      font-size: 18px
+    }
+  }
+}

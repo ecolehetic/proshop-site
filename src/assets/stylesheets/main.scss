@@ -1,1 +1,85 @@
+@import "variables";
+@import "normalize";
+@import "mixins";
+
 @import "header";
+@import "baseline";
+@import "home";
+
+
+*,
+*:after,
+*:before {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+
+body {
+	margin: 0 auto;
+  font-family: 'Lato', sans-serif;
+}
+
+main {
+	padding-top: 74px;
+}
+
+ul{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+a{
+	text-decoration: none;
+}
+
+.mobile {
+	display: none;
+}
+
+.burger {
+	outline: none;
+	position: absolute;
+	bottom: 2px;
+	right: 5px;
+	width: 40px;
+	height: 40px;
+	text-align: center;
+	span:before,
+	span:after {
+		content: '';
+	}
+	span,
+	span:before,
+	span:after {
+		width: 20px;
+		height: 1px;
+		left: 11px;
+		background: #3C3A3A;
+		display: inline-block;
+		position: absolute;
+	}
+	span:before {
+		top: -6px;
+		left: 0;
+	}
+	span {
+		left: 11px;
+		top: 19px;
+	}
+	span:after {
+		top: 6px;
+		left: 0;
+	}
+}
+
+@media screen and (max-width: 760px) {
+	.mobile {
+		display: block;
+	}
+	.desktop {
+		display: none;
+	}
+}
